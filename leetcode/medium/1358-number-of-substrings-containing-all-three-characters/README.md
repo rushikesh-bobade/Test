@@ -45,50 +45,33 @@ Output: 1
 
 ## Solution
 
-**Language:** Java  
-**Runtime:** 13 ms (beats 66.81%)  
-**Memory:** 46 MB (beats 90.50%)  
-**Submitted:** 2026-07-07T15:17:28.898Z  
+**Language:** C++  
+**Runtime:** 0 ms  
+**Memory:** 7.8 MB  
+**Submitted:** 2026-07-07T15:18:42.224Z  
 
-```java
+```cpp
 class Solution {
-    public int numberOfSubstrings(String s) {
-        int[] last = {-1, -1, -1};
-        int ans = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            last[s.charAt(i) - 'a'] = i;
-            ans += Math.min(last[0], Math.min(last[1], last[2])) + 1;
-        }
-
-        return ans;
-    }
-}
-
-
-/*
-class Solution {
-    public int numberOfSubstrings(String s) {
-        int n = s.length();
-        int[] freq = new int[3];
-
+public:
+    int numberOfSubstrings(string s) {
+        int freq[3] = {0};
         int left = 0;
-        int ans = 0;
+        int count = 0;
 
-        for (int right = 0; right < n; right++) {
-            freq[s.charAt(right) - 'a']++;
+        for (int right = 0; right < s.size(); right++) {
+            freq[s[right] - 'a']++;
 
             while (freq[0] > 0 && freq[1] > 0 && freq[2] > 0) {
-                ans += (n - right);
-                freq[s.charAt(left) - 'a']--;
+                freq[s[left] - 'a']--;
                 left++;
             }
+
+            count += left;
         }
 
-        return ans;
+        return count;
     }
-}
-*/
+};
 ```
 
 ---
