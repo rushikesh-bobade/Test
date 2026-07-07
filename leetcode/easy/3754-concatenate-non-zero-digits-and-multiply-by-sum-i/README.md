@@ -45,20 +45,21 @@ Return an integer representing the value of `x * sum`.
 
 ## Solution
 
-**Language:** Java  
-**Runtime:** 1 ms (beats 99.85%)  
-**Memory:** 42.8 MB (beats 34.98%)  
-**Submitted:** 2026-07-07T15:07:21.594Z  
+**Language:** C++  
+**Runtime:** 0 ms  
+**Memory:** 7.7 MB  
+**Submitted:** 2026-07-07T15:09:10.909Z  
 
-```java
+```cpp
 class Solution {
-    public long sumAndMultiply(int n) {
-        String s = String.valueOf(n);
+public:
+    long long sumAndMultiply(int n) {
+        string s = to_string(n);
 
-        long x = 0;
-        long sum = 0;
+        long long x = 0;
+        long long sum = 0;
 
-        for (char c : s.toCharArray()) {
+        for (char c : s) {
             if (c != '0') {
                 int digit = c - '0';
                 x = x * 10 + digit;
@@ -68,7 +69,7 @@ class Solution {
 
         return x * sum;
     }
-}
+};
 ```
 
 ---
