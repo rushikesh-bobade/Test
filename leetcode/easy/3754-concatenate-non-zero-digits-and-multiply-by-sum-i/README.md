@@ -46,9 +46,9 @@ Return an integer representing the value of `x * sum`.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42 MB  
-**Submitted:** 2026-07-07T15:07:16.030Z  
+**Runtime:** 1 ms (beats 99.85%)  
+**Memory:** 42.8 MB (beats 34.98%)  
+**Submitted:** 2026-07-07T15:07:21.594Z  
 
 ```java
 class Solution {
